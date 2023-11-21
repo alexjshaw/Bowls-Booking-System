@@ -9,10 +9,7 @@ import { DatePickerInput } from '@mantine/dates';
 
 
 export default function Header({currentDate, setCurrentDate}) {
-  // Function to format the date
-  const formatDate = (date) => date.format('DD/MM/YYYY');
 
-  // Function to go to the previous date
   const goToPreviousDate = () => {
     setCurrentDate(currentDate.subtract(1, 'day'));
   };

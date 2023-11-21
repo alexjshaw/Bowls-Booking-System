@@ -4,7 +4,7 @@ import React from 'react';
 import { Box, Text, Button } from '@mantine/core';
 
 export default function RinkDisplay({ currentDate, selectedTimeSlot }) {
-  const courts = [
+  const rinks = [
     { number: 1 },
     { number: 2 },
     { number: 3 },
@@ -14,42 +14,42 @@ export default function RinkDisplay({ currentDate, selectedTimeSlot }) {
   ];
 
   const bookings = [
-    { court: 1, date: '2023-11-21', slot: '8-10am', bookedBy: "Jane Doe" },
-    { court: 3, date: '2023-11-21', slot: '4-6pm', bookedBy: "Adam Shaw" },
-    { court: 2, date: '2023-11-22', slot: '12-2pm', bookedBy: "Joe Bloggs" },
+    { rink: 1, date: '2023-11-21', slot: '8-10am', bookedBy: "Jane Doe" },
+    { rink: 3, date: '2023-11-21', slot: '4-6pm', bookedBy: "Adam Shaw" },
+    { rink: 2, date: '2023-11-22', slot: '12-2pm', bookedBy: "Joe Bloggs" },
   ];
 
-  const getBookingDetails = (courtNumber) => {
+  const getBookingDetails = (rinkNumber) => {
     return bookings.find(
       (booking) =>
-        booking.court === courtNumber &&
+        booking.rink === rinkNumber &&
         booking.date === currentDate.format('YYYY-MM-DD') &&
         booking.slot === selectedTimeSlot
     );
   };
 
-  const handleBookCourt = (courtNumber) => {
+  const handleBookrink = (rinkNumber) => {
     console.log("Booking Details:", {
       date: currentDate.format('YYYY-MM-DD'),
       timeSlot: selectedTimeSlot,
-      courtNumber
+      rinkNumber
     });
   };
 
   return (
-    <Box className={classes.courtContainer}>
-    {courts.map((court) => {
-      const booking = getBookingDetails(court.number);
+    <Box className={classes.rinkContainer}>
+    {rinks.map((rink) => {
+      const booking = getBookingDetails(rink.number);
       const isAvailable = !booking;
 
       return (
-        <Box key={court.number} className={classes.courtCard}>
-          <Text>Court {court.number}</Text>
+        <Box key={rink.number} className={classes.rinkCard}>
+          <Text>Rink {rink.number}</Text>
           <Text>
             Status: {booking ? `Booked by ${booking.bookedBy}` : 'Available'}
           </Text>
           {isAvailable && (
-            <Button onClick={() => handleBookCourt(court.number)}>Book Court</Button>
+            <Button onClick={() => handleBookrink(rink.number)}>Book Rink</Button>
           )}
         </Box>
       );

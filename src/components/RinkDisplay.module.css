@@ -1,10 +1,10 @@
-.courtContainer {
+.rinkContainer {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.courtCard {
+.rinkCard {
   padding: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
