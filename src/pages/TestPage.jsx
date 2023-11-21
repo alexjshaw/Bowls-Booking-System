@@ -7,6 +7,7 @@ import dayjs from "dayjs";
 import Header from "../components/Header";
 import RinkDisplay from "../components/RinkDisplay";
 import TimeSelect from "../components/TimeSelect";
+import Footer from "../components/Footer";
 
 import { Center, Box } from "@mantine/core";
 
@@ -28,11 +29,16 @@ export default function TestPage() {
           />
         </Box>
         <Box className={classes.rightColumn}>
-          <TimeSelect setSelectedTimeSlot={setSelectedTimeSlot} />
+          <TimeSelect
+            selectedTimeSlot={selectedTimeSlot}
+            setSelectedTimeSlot={setSelectedTimeSlot}
+          />
         </Box>
       </Box>
 
-      <Box className={classes.footer}>{/* Footer content goes here */}</Box>
+      <Box className={classes.footer}>
+        <Footer />
+      </Box>
     </Center>
   );
 }
