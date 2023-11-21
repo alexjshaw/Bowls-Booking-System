@@ -1,8 +1,8 @@
 .center {
   max-width: 800px;
-  max-height: 1080px;
+  /* max-height: 1080px; */
   width: 100%;
-  height: 100dvh;
+  /* height: 100%; */
   background-color: var(--mantine-color-yellow-1);
   display: flex;
   flex-direction: column;

@@ -36,9 +36,9 @@ export default function TestPage() {
         </Box>
       </Box>
 
-      <Box className={classes.footer}>
+      {/* <Box className={classes.footer}>
         <Footer />
-      </Box>
+      </Box> */}
     </Center>
   );
 }
