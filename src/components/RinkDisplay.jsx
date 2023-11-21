@@ -38,22 +38,25 @@ export default function RinkDisplay({ currentDate, selectedTimeSlot }) {
 
   return (
     <Box className={classes.rinkContainer}>
-    {rinks.map((rink) => {
-      const booking = getBookingDetails(rink.number);
-      const isAvailable = !booking;
+      {rinks.map((rink) => {
+        const booking = getBookingDetails(rink.number);
+        const isAvailable = !booking;
 
-      return (
-        <Box key={rink.number} className={classes.rinkCard}>
-          <Text>Rink {rink.number}</Text>
-          <Text>
-            Status: {booking ? `Booked by ${booking.bookedBy}` : 'Available'}
-          </Text>
-          {isAvailable && (
-            <Button onClick={() => handleBookrink(rink.number)}>Book Rink</Button>
-          )}
-        </Box>
-      );
-    })}
-  </Box>
+        return (
+          <Box key={rink.number} className={classes.rinkCard}>
+            <Box className={classes.rinkInfo}>
+              <Text>Rink {rink.number}</Text>
+              <Text>Status: {booking ? `Booked by ${booking.bookedBy}` : 'Available'}</Text>
+            </Box>
+            
+            {isAvailable && (
+              <Box className={classes.bookButtonContainer}>
+                <Button onClick={() => handleBookRink(rink.number)}>Book</Button>
+              </Box>
+            )}
+          </Box>
+        );
+      })}
+    </Box>
   );
 }
