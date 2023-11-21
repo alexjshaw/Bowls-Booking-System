@@ -9,7 +9,7 @@ import RinkDisplay from "../components/RinkDisplay";
 import TimeSelect from "../components/TimeSelect";
 import Footer from "../components/Footer";
 
-import { Center, Box } from "@mantine/core";
+import { Center, Box, Container } from "@mantine/core";
 
 export default function TestPage() {
   const [currentDate, setCurrentDate] = useState(dayjs());

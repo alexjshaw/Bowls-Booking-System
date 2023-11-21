@@ -4,15 +4,16 @@ import '@mantine/dates/styles.css';
 // import Router from './routes';
 // import './App.css'
 import TestPage from "./pages/TestPage.jsx"
-import { Center } from '@mantine/core';
+import { Center, Box, Container } from '@mantine/core';
+import classes from "./App.module.css"
 
 function App() {
 
   return (
     <MantineProvider>
-      <Center h="100vh" w="100vw" bg="var(--mantine-color-red-1)">
+      <Box h="100vh" w="100vw" bg="var(--mantine-color-red-1)" className={classes.mainBox}>
       <TestPage />
-      </Center>
+      </Box>
     </MantineProvider>
   )
 }
