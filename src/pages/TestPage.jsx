@@ -1,33 +1,38 @@
 import { useState } from "react";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
-import classes from "./TestPage.module.css"
+import classes from "./TestPage.module.css";
+import dayjs from "dayjs";
 
 import Header from "../components/Header";
 import RinkDisplay from "../components/RinkDisplay";
+import TimeSelect from "../components/TimeSelect";
 
 import { Center, Box } from "@mantine/core";
 
 export default function TestPage() {
+  const [currentDate, setCurrentDate] = useState(dayjs());
+  const [selectedTimeSlot, setSelectedTimeSlot] = useState("8-10am");
 
   return (
     <Center className={classes.center}>
       <Box className={classes.header}>
-        <Header />
+        <Header currentDate={currentDate} setCurrentDate={setCurrentDate} />
       </Box>
-      
+
       <Box className={classes.mainContent}>
         <Box className={classes.leftColumn}>
-          <RinkDisplay />
+          <RinkDisplay
+            currentDate={currentDate}
+            selectedTimeSlot={selectedTimeSlot}
+          />
         </Box>
         <Box className={classes.rightColumn}>
-          {/* Right column content goes here */}
+          <TimeSelect setSelectedTimeSlot={setSelectedTimeSlot} />
         </Box>
       </Box>
 
-      <Box className={classes.footer}>
-        {/* Footer content goes here */}
-      </Box>
+      <Box className={classes.footer}>{/* Footer content goes here */}</Box>
     </Center>
   );
 }

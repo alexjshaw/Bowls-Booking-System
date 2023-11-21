@@ -8,10 +8,7 @@ import dayjs from 'dayjs';
 import { DatePickerInput } from '@mantine/dates';
 
 
-export default function Header() {
-  // State for the current date
-  const [currentDate, setCurrentDate] = useState(dayjs());
-
+export default function Header({currentDate, setCurrentDate}) {
   // Function to format the date
   const formatDate = (date) => date.format('DD/MM/YYYY');
 

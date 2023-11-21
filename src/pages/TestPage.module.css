@@ -23,9 +23,11 @@
 .leftColumn {
   flex-grow: 1;
   background-color: var(--mantine-color-blue-1);
+  padding: var(--mantine-spacing-md);
 }
 
 .rightColumn {
-  width: 75px;
+  width: 100px;
   background-color: var(--mantine-color-green-1);
+  padding: var(--mantine-spacing-md);
 }
