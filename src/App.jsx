@@ -11,7 +11,7 @@ function App() {
 
   return (
     <MantineProvider>
-      <Box h="100vh" w="100vw" bg="var(--mantine-color-red-1)" className={classes.mainBox}>
+      <Box className={classes.mainBox}>
       <TestPage />
       </Box>
     </MantineProvider>
