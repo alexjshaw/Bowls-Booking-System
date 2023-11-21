@@ -1,0 +1,8 @@
+/* sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} */
+
+.headerBox {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

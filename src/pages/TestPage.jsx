@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import classes from "./TestPage.module.css"
 
 import Header from "../components/Header";
+import RinkDisplay from "../components/RinkDisplay";
 
 import { Center, Box } from "@mantine/core";
 
@@ -17,7 +18,7 @@ export default function TestPage() {
       
       <Box className={classes.mainContent}>
         <Box className={classes.leftColumn}>
-          {/* Left column content goes here */}
+          <RinkDisplay />
         </Box>
         <Box className={classes.rightColumn}>
           {/* Right column content goes here */}
